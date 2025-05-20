@@ -5,3 +5,9 @@ const config = require('../config/database');
 const {notifyAdmins} = require('../utils/notificationUtils');
 
 jest.mock('../models/User')
+jest.mock('../utils/notificationUtils')
+jest.mock('jsonwebtoken');
+
+describe('register controller', () => {
+
+})
