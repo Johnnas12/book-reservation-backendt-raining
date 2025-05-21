@@ -40,8 +40,19 @@ jobs:
       - name: Run ESLint
         run: npm run lint
 
+      - name: Run DB Connections
+        run: npm run db:connect
+        env:
+          MONGO_URI: mongodb://localhost:27017/testdb 
 
-      - name: Run Jest Tests
-        run: npx jest tests/register.test.js
+      - name: Run Jest Tests (Registration Unit Test)
+        run: npx jest tests/db.test.js
         env:
           MONGO_URI: mongodb://localhost:27017/testdb
+
+      - name: Run login API Tests (Login Unit Test)
+        run: npx jest tests/api.test.js
+        env:
+          MONGO_URI: mongodb://localhost:27017/testdb
+      
+      
