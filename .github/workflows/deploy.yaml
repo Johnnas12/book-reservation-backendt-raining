@@ -41,12 +41,12 @@ jobs:
         run: npm run lint
 
       - name: Run DB Connections
-        run: npm run db:connect
+        run: npx jest tests/db.test.js
         env:
           MONGO_URI: mongodb://localhost:27017/testdb 
 
       - name: Run Jest Tests (Registration Unit Test)
-        run: npx jest tests/db.test.js
+        run: npx jest tests/register.test.js
         env:
           MONGO_URI: mongodb://localhost:27017/testdb
 
