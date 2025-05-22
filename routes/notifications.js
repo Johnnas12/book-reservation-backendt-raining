@@ -6,3 +6,4 @@ const auth = require("../middleware/auth");
 router.get("/", auth, getNotifications);
 
 module.exports = router;
+}
